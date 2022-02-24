@@ -1,4 +1,5 @@
 from turtle import Turtle
+from typing_extensions import Self
 
 FONT = ("Courier", 24, "normal")
 
@@ -11,5 +12,8 @@ class Scoreboard(Turtle):
         self.level = 1
         self.hideturtle()
         self.penup()
-        self.write("Level: {self.level}", align="left", font=FONT)
+        self.goto(-280, 250)
+        self.write(f"Level: {self.level}", align="left", font=FONT)
         
+    def increase_level(self):
+        self.level += 1
